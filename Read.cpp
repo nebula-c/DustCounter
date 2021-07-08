@@ -93,12 +93,12 @@ int Read() {
     // graph3->SetMarkerSize(0.1);
     // graph3->SetLineColor(4);
     
-    Drawing_Graph(fs, "20210706144741.csv", graph1, kRed);          //처장실
-    Drawing_Graph(fs, "20210706144750.csv", graph2, kGreen);        //동아리방
-    Drawing_Graph(fs, "20210706144755.csv", graph3, kRed+1);        //처장실
-    Drawing_Graph(fs, "20210706144759.csv", graph4, kBlue);         //207
-    Drawing_Graph(fs, "20210706144803.csv", graph5, kBlue+1);       //207
-    Drawing_Graph(fs, "20210706144808.csv", graph6, kBlack);        //회의실
+    Drawing_Graph(fs, "20210706144755.csv", graph1, kRed);          //처장실
+    Drawing_Graph(fs, "20210706144750.csv", graph2, kYellow);       //동아리방
+    Drawing_Graph(fs, "20210706144803.csv", graph3, kGreen);        //207-1
+    Drawing_Graph(fs, "20210706144808.csv", graph4, kCyan);         //회의실
+    Drawing_Graph(fs, "20210708152557.csv", graph5, kBlue);         //복도
+    Drawing_Graph(fs, "20210708152603.csv", graph6, kMagenta);      //밖
 
 
     
@@ -115,9 +115,9 @@ int Read() {
     frame->SetTitle("Number of particle;particle size;# of particle");
     legend->AddEntry(graph1,"Prof","l");
     legend->AddEntry(graph2,"PAC","l");
-    legend->AddEntry(graph3,"Prof","l");
-    legend->AddEntry(graph4,"207","l");
-    legend->AddEntry(graph5,"207","l");
+    legend->AddEntry(graph3,"207-1","l");
+    legend->AddEntry(graph4,"meeting room","l");
+    legend->AddEntry(graph5,"corridor","l");
     legend->AddEntry(graph6,"meeting room","l");
     legend->Draw();
     // Yaxis->Draw();
