@@ -10,6 +10,8 @@
 #include "TGaxis.h"
 #include "TMath.h"
 #include "TColor.h"
+#include "TF1.h"
+#include "TFitResultPtr.h"
 #define num_of_data 10
 using namespace std;
 
@@ -20,7 +22,7 @@ void Calibration()
     TGraph *graph1 = new TGraph(); 
     fstream *thinq = new fstream();
     fstream *counter = new fstream();
-    
+    TF1 *func = new TF1("func", "[0]*x+[1]",0,50);
     c1->Draw();
     //c1->SetLogy();
 
@@ -66,5 +68,9 @@ void Calibration()
     graph1->SetMarkerStyle(20);
     graph1->SetMarkerSize(1);
     graph1->Draw("ap");
-    
+    graph1->Fit("func","","",0,30);
+    //TF1 *fitResult = hist->GetFunction("func");
+
+    TH1 *frame = graph1->GetHistogram();
+    frame->SetTitle("Puricare-ParticleCounter;Puricare(ug/m3);ParticleCounter(PCS/m3)");
 }
