@@ -15,6 +15,10 @@ using namespace std;
 void Drawing_Graph(fstream* fs, TString filename,TGraph* graph_n, Color_t color);
 void Drawing_wearther(TGraph *graph4, TGraph *graph5);
 
+/*
+Read data from sereral places and draw it
+*/
+
 int Read() {
 
     TCanvas *c1 = new TCanvas("c1", "Num of Dust");
@@ -93,21 +97,21 @@ int Read() {
     // graph3->SetMarkerSize(0.1);
     // graph3->SetLineColor(4);
     
-    Drawing_Graph(fs, "20210706144755.csv", graph1, kRed);          //처장실
-    Drawing_Graph(fs, "20210706144750.csv", graph2, kYellow);       //동아리방
-    Drawing_Graph(fs, "20210706144803.csv", graph3, kGreen);        //207-1
-    Drawing_Graph(fs, "20210706144808.csv", graph4, kCyan);         //회의실
-    Drawing_Graph(fs, "20210708152557.csv", graph5, kBlue);         //복도
-    Drawing_Graph(fs, "20210708152603.csv", graph6, kMagenta);      //밖
+    Drawing_Graph(fs, "./data/20210706144755.csv", graph1, kRed);          //처장실
+    Drawing_Graph(fs, "./data/20210706144750.csv", graph2, kYellow);       //동아리방
+    Drawing_Graph(fs, "./data/20210706144803.csv", graph3, kGreen);        //207-1
+    Drawing_Graph(fs, "./data/20210706144808.csv", graph4, kCyan);         //회의실
+    Drawing_Graph(fs, "./data/20210708152557.csv", graph5, kBlue);         //복도
+    Drawing_Graph(fs, "./data/20210708152603.csv", graph6, kMagenta);      //밖
 
 
     
-    m1->Add(graph1);
-    m1->Add(graph2);
+    // m1->Add(graph1);
+    // m1->Add(graph2);
     m1->Add(graph3);
-    m1->Add(graph4);
-    m1->Add(graph5);
-    m1->Add(graph6);
+    // m1->Add(graph4);
+    // m1->Add(graph5);
+    // m1->Add(graph6);
     // m1->SetMinimum(100);
     m1->Draw("apl");
 

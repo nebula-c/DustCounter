@@ -15,6 +15,10 @@
 #define num_of_data 10
 using namespace std;
 
+/*
+draw correlation and fit it
+read original file and csv file
+*/
 void Calibration()
 {
     TCanvas *c1 = new TCanvas("c1", "ParticleCounter-Puricare");
@@ -31,8 +35,8 @@ void Calibration()
     bool start = false;
     int count=0, num=0;
 
-    counter->open("20210610141827.csv",ios::in);
-    thinq->open("test.csv", ios::in);
+    counter->open("./data/20210610141827.csv",ios::in);
+    thinq->open("./data/test.csv", ios::in);
 
     while(!counter->eof()){
         getline(*counter,str_buf1,',');
